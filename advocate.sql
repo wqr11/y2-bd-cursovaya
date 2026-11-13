@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `settlements` (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     case_id INT UNSIGNED NOT NULL,
 
-    settled_date DATETIME,
+    settled_date DATETIME DEFAULT CURRENT_TIMESTAMP,
 
     FOREIGN KEY (case_id)
         REFERENCES `cases`(id)
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 
 );
 
-CREATE TABLE IF NOT EXISTS `cases_articles` (
+CREATE TABLE IF NOT EXISTS `cases_to_articles` (
     case_id INT UNSIGNED NOT NULL,
     article_id INT UNSIGNED NOT NULL,
 
